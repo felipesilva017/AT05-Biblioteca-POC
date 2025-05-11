@@ -62,8 +62,7 @@ class CalculatorActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             override fun afterTextChanged(s: Editable) {
                 val textValue = s.toString()
                 if (textValue.isNotEmpty()) {
-                    val sanitizedString =
-                        textValue.replace(Regex("[^0-9,.]+"), "").replace(".", "").replace(",", ".")
+                    val sanitizedString = MoneyDivision.formatMoneyToDecimal(textValue)
                     val money = sanitizedString.toFloat()
                     calculateMoneyForEachAndShowResult(money, null)
                     totalMoney = money
@@ -80,8 +79,7 @@ class CalculatorActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             override fun afterTextChanged(s: Editable) {
                 val textValue = s.toString()
                 if (textValue.isNotEmpty()) {
-                    val sanitizedString =
-                        textValue.replace(Regex("[^0-9,.]+"), "").replace(".", "").replace(",", ".")
+                    val sanitizedString = MoneyDivision.formatMoneyToDecimal(textValue)
                     val amountOfPeopleToDivideInt = sanitizedString.toInt()
                     calculateMoneyForEachAndShowResult(null, amountOfPeopleToDivideInt)
                     amountOfPeopleToDivide = amountOfPeopleToDivideInt

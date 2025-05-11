@@ -13,4 +13,12 @@ class MoneyDivision(private val totalMoney: Float, private val amountOfPeopleToD
     fun formatMoneyValueToString(money: Float): String {
         return Currency(CurrencyCode.BRL).format(money)
     }
+
+    companion object {
+        fun formatMoneyToDecimal(text: String): String {
+            val onlyNumbersAndCommas = text.replace(Regex("[^0-9,.]+"), "")
+            val onlyNumberAndDecimal = onlyNumbersAndCommas.replace(".", "")
+            return onlyNumberAndDecimal.replace(",", ".")
+        }
+    }
 }
