@@ -100,4 +100,25 @@ class CalculatorActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         val moneyForEachOneStr = moneyDivision.formatMoneyValueToString(moneyForEachOne)
         moneyCalcResult.setText(moneyForEachOneStr)
     }
+
+    fun speakText(v: View) {
+        if (tts.isSpeaking) {
+            tts.stop()
+        }
+        if (ttsSuccess) {
+            Log.d(tag, tts.voices.toString())
+            tts.speak(moneyCalcResult.text.toString(), TextToSpeech.QUEUE_FLUSH, null, null)
+        }
+    }
+
+    fun shareText(v: View) {
+        val sendIntent: Intent =
+            Intent().apply {
+                action = Intent.ACTION_SEND
+                putExtra(Intent.EXTRA_TEXT, moneyCalcResult.text.toString())
+                type = "text/plain"
+            }
+        val shareIntent = Intent.createChooser(sendIntent, null)
+        startActivity(shareIntent)
+    }
 }
