@@ -1,8 +1,8 @@
 package com.fw.vamosrachar.model
 
-public class MoneyDivision(private val totalMoney: Float, private val amountOfPeopleToDive: Int) {
+class MoneyDivision(private val totalMoney: Float, private val amountOfPeopleToDivide: Int) {
     fun calcMoneyForEachPerson(): Float {
-        return totalMoney / amountOfPeopleToDive
+        return totalMoney / amountOfPeopleToDivide
     }
 
     fun formatMoneyValueToString(money: Float): String {
