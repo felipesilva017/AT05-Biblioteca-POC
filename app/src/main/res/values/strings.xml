@@ -4,7 +4,7 @@
     <string name="initial_value">R$ 0,00</string>
     <string name="people">Nº Pessoas</string>
     <string name="initial_value_people">0</string>
-    <string name="initial_value_result">0,00</string>
+    <string name="initial_value_result">R$ 0,00</string>
     <string name="share">Compartilhar</string>
     <string name="speak">Falar</string>
     <string name="logo_description">Logo do Aplicativo</string>
