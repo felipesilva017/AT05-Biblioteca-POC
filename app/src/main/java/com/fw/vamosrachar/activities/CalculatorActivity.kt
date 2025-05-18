@@ -66,6 +66,9 @@ class CalculatorActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                     val money = sanitizedString.toFloat()
                     calculateMoneyForEachAndShowResult(money, null)
                     totalMoney = money
+                } else {
+                    moneyCalcResult.text = "0,00"
+                    totalMoney = 0.0f
                 }
             }
         }
@@ -78,13 +81,18 @@ class CalculatorActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
             override fun afterTextChanged(s: Editable) {
                 val textValue = s.toString()
+                Log.v("peopleQuantityTextWatcher", textValue)
                 if (textValue.isNotEmpty()) {
                     val sanitizedString = MoneyDivision.formatMoneyToDecimal(textValue)
                     val amountOfPeopleToDivideInt = sanitizedString.toInt()
                     calculateMoneyForEachAndShowResult(null, amountOfPeopleToDivideInt)
                     amountOfPeopleToDivide = amountOfPeopleToDivideInt
+                } else {
+                    moneyCalcResult.text = "0,00"
+                    amountOfPeopleToDivide = 1
                 }
             }
+
         }
 
     private fun calculateMoneyForEachAndShowResult(
@@ -96,7 +104,7 @@ class CalculatorActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         val moneyDivision = MoneyDivision(moneyValue, amountOfPeopleToDivideValue)
         val moneyForEachOne = moneyDivision.calcMoneyForEachPerson()
         val moneyForEachOneStr = moneyDivision.formatMoneyValueToString(moneyForEachOne)
-        moneyCalcResult.setText(moneyForEachOneStr)
+        moneyCalcResult.text = moneyForEachOneStr
     }
 
     fun speakText(v: View) {
