@@ -67,7 +67,7 @@ class CalculatorActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                     calculateMoneyForEachAndShowResult(money, null)
                     totalMoney = money
                 } else {
-                    moneyCalcResult.text = "0,00"
+                    moneyCalcResult.text = getString(R.string.initial_value_result)
                     totalMoney = 0.0f
                 }
             }
@@ -88,7 +88,7 @@ class CalculatorActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                     calculateMoneyForEachAndShowResult(null, amountOfPeopleToDivideInt)
                     amountOfPeopleToDivide = amountOfPeopleToDivideInt
                 } else {
-                    moneyCalcResult.text = "0,00"
+                    moneyCalcResult.text = getString(R.string.initial_value_result)
                     amountOfPeopleToDivide = 1
                 }
             }
