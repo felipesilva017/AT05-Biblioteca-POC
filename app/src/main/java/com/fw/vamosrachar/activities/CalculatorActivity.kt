@@ -81,7 +81,6 @@ class CalculatorActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
             override fun afterTextChanged(s: Editable) {
                 val textValue = s.toString()
-                Log.v("peopleQuantityTextWatcher", textValue)
                 if (textValue.isNotEmpty()) {
                     val sanitizedString = MoneyDivision.formatMoneyToDecimal(textValue)
                     val amountOfPeopleToDivideInt = sanitizedString.toInt()
