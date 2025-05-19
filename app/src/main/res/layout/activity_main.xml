@@ -42,7 +42,7 @@
         android:layout_marginEnd="51dp"
         android:ems="10"
         android:hint="@string/initial_value"
-        android:inputType="number"
+        android:inputType="text"
         android:autofillHints=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textValue"
