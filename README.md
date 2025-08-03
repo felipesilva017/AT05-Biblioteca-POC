@@ -1,36 +1,36 @@
-💸 Vamos Rachar
-Aplicativo Android para facilitar a divisão de valores entre pessoas de forma rápida, intuitiva e acessível.
+# 💸 Vamos Rachar
 
-✨ Funcionalidades
-🧮 Cálculo da Divisão de Dinheiro
-Permite inserir o valor total a ser dividido e a quantidade de pessoas.
+Aplicativo Android que facilita a divisão de valores entre pessoas de forma rápida, intuitiva e acessível.
 
-O valor por pessoa é automaticamente calculado e exibido em tempo real.
+## ✨ Funcionalidades
 
-🔊 Leitura em Voz Alta (TTS)
-Utiliza Text-to-Speech (TTS) para ler em voz alta o valor calculado por pessoa.
+### 🧮 Cálculo da Divisão de Dinheiro
+- Permite inserir o **valor total** a ser dividido.
+- Permite inserir a **quantidade de pessoas**.
+- O valor por pessoa é calculado automaticamente e exibido em tempo real.
 
-Ideal para acessibilidade ou uso em grupo.
+### 🔊 Leitura em Voz Alta (TTS)
+- Utiliza **Text-to-Speech** para ler em voz alta o valor calculado.
+- Útil para acessibilidade ou situações onde a leitura em grupo é prática.
 
-📤 Compartilhamento do Resultado
-O valor por pessoa pode ser compartilhado com outros aplicativos (como WhatsApp, e-mail, etc.) com um clique.
+### 📤 Compartilhamento de Resultado
+- Permite **compartilhar** o valor calculado com outros aplicativos (WhatsApp, e-mail, etc.).
 
-💾 Salvamento de Resultados
-Salva divisões realizadas em um banco de dados local para consulta futura.
+### 💾 Salvamento de Resultados
+- Salva os cálculos realizados no banco de dados local.
 
-📋 Visualização de Resultados Salvos
-Tela dedicada para listar todos os cálculos salvos anteriormente.
+### 📋 Visualização de Resultados Salvos
+- Tela dedicada que lista todas as divisões salvas anteriormente.
 
-📥 Recebimento de Texto Compartilhado
-Tela especial para exibir mensagens ou textos recebidos de outros apps via Intent.
+### 📥 Recebimento de Texto Compartilhado
+- Exibe informações recebidas de outros aplicativos por meio de `Intent`.
 
-🛠 Tecnologias Utilizadas
-Kotlin
+---
 
-Android SDK
+## 🛠 Tecnologias Utilizadas
 
-SQLite (via DatabaseHelper)
-
-TextToSpeech (Android TTS)
-
-Android Intents para compartilhamento
+- **Kotlin**
+- **Android SDK**
+- **SQLite** (via `DatabaseHelper`)
+- **TextToSpeech** (Android TTS)
+- **Android Intents** para compartilhamento e navegação
