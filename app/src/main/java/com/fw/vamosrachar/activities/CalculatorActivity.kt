@@ -11,6 +11,7 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.fw.vamosrachar.R
+import com.fw.vamosrachar.data.DatabaseHelper
 import com.fw.vamosrachar.model.MoneyDivision
 import java.util.*
 
@@ -125,5 +126,16 @@ class CalculatorActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             }
         val shareIntent = Intent.createChooser(sendIntent, null)
         startActivity(shareIntent)
+    }
+
+    fun salvarResultado(v: View) {
+        val resultadoFinal = moneyCalcResult.text.toString()
+        val dbHelper = DatabaseHelper(this)
+        dbHelper.salvarDivisao(totalMoney, amountOfPeopleToDivide, resultadoFinal)
+    }
+
+    fun verResultadosSalvos(v: View) {
+        val intent = Intent(this, SavedResultsActivity::class.java)
+        startActivity(intent)
     }
 }
